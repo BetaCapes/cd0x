@@ -1294,7 +1294,7 @@ canvas .webgl{
   pointer-events: none;
 }
  #NFTAvatarCanvas {
-  background-color: red;
+
   position: absolute;
   z-index: 2;
   top:0;
