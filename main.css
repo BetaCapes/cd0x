@@ -8,44 +8,30 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  white-space: no-wrap;
+  text-decoration: none;
+  /* border: 1px solid red;                  */
+  
+}
+*:focus{
+  outline: none;
+}
 
 html{
     overscroll-behavior: none;
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
+body {
+  background-color: black;
+  width: 100%;  
+}
 
-* {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    box-sizing: border-box;
-    /* border: 1px solid red;                  */
-    
-  }
-  *:focus{
-    outline: none;
-  }
-  
-  body {
-    /* background-color: red; */
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    /* font-family: "Open Sans", sans-serif; */
-    /* font-family: 'Inter var', sans-serif; */
-    
-  }
-
-  a {
-    color: #0563bb;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: #067ded;
-    text-decoration: none;
-  }
   
 /*--------------------------------------------------------------
 # Back to top button
@@ -866,7 +852,7 @@ html{
   height: 40vh;
   padding: 0;
   font-family: 'Teko', sans-serif;
-  font-size: 2.2vw;
+  font-size: 2.3vw;
   word-spacing: 0.2vw;
   /* margin-top: -40vw; */
   
@@ -898,6 +884,8 @@ html{
 # Reviews
 --------------------------------------------------------------*/
 .feedbacks{
+  padding: 0;
+  margin: 0;
   width: 100%;
   max-height: 100vh;
   background-color: black;
@@ -919,6 +907,8 @@ html{
 }
 .reviewHeading2{
   padding: 0;
+  margin-left: 0;
+  margin-right: 0;
   font-family: 'A4 Speed Bold', sans-serif;
   text-transform: uppercase;
   font-size: 5vw;
@@ -1128,6 +1118,7 @@ html{
   z-index: 10;
   padding: 0;
   margin: 0 !important;
+  padding: 0;
 }
 
 .modelGame{
@@ -1289,7 +1280,7 @@ canvas .webgl{
   background-color: #000;
 }
 .NFTAvatarHeading{
-
+  padding-top: 80px;
   display: flex;
   /* align-items: center; */
   justify-content: center;
@@ -1303,7 +1294,7 @@ canvas .webgl{
   pointer-events: none;
 }
  #NFTAvatarCanvas {
-  /* background-color: red; */
+  background-color: red;
   position: absolute;
   z-index: 2;
   top:0;
@@ -1323,7 +1314,7 @@ canvas .webgl{
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 1px;
-  line-height: 0.8;
+  line-height: 1;
 }
 
 #text-behind {
@@ -1351,8 +1342,8 @@ canvas .webgl{
 .NFTAvatarDescription{
   /* background-color: red; */
   position: absolute;
-  bottom: 5%;
-  font-size: clamp(3vw,2.5vw,2.5vw);
+  bottom: 0%;
+  font-size: clamp(2.3vw,2.3vw,2.3vw);
   font-family: 'Teko', sans-serif;
   display: flex;
   padding: 0;
