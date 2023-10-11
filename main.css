@@ -31,7 +31,9 @@ body {
   background-color: black;
   width: 100%;  
 }
-
+img{
+  pointer-events: none;
+}
   
 /*--------------------------------------------------------------
 # Back to top button
@@ -263,6 +265,7 @@ body {
   width: 24px;
   height: 50px;
   margin-top: 125px;
+  opacity: 0.3;
 }
 
 .m_scroll_arrows
@@ -589,6 +592,7 @@ body {
     object-fit: contain;
   }
   .videoNFTBG{
+    overflow: hidden;
     position: relative;
     pointer-events: none;
     margin-top: 1vw;
@@ -602,11 +606,10 @@ body {
   .videoNFTBG video{
     position: absolute;
     pointer-events: none;
-    left: 50%;
-    transform: translate(-50%,0%);
+    
     z-index: 1;
     width: 100%;
-    height: 70vh;
+    height: 100%;
     background-color: #000;
   }
   .NFTHeadingDiv{
@@ -705,7 +708,13 @@ body {
   }
 
   .videoNFTBG video{
-    object-fit: cover;
+    
+    transform-origin: 0% 0% 0px;
+    left: -68%;
+    top: -65%;
+    transform: scale(2.4);
+    /* transform: translate(-50%,0%);  */
+    /* object-fit: cover;*/
   }
   .buyButtonsHeadingRow{
     height: 5vh;
@@ -858,7 +867,7 @@ body {
 }
 .rewardPointDiv p.rewardHeading2, .rewardPointDiv p.rewardHeading3 {
   background: rgb(255,231,27);
-  background-image: linear-gradient(45deg, rgba(255,231,27,1) 19%, rgba(208,171,24,1) 17%, rgb(154, 102, 28) 87%);
+  background-image: linear-gradient(45deg, rgba(255,231,27,1) 19%, rgba(208,171,24,1) 57%, rgb(154, 102, 28) 87%);
   background-size: cover;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -993,6 +1002,19 @@ body {
   color: white;
 
 }
+.reviewHeading::after{
+  content: "";
+  width: 28%;
+  height: 1px;
+  background: rgb(255,231,27);
+  background: linear-gradient(90deg, rgba(154,102,28,0.1) 20%, rgba(255,231,27,0.7) 48%, rgba(208,171,24,1) 60%, rgba(154,102,28,0.1) 100%);
+  border-radius: 50% 50% 50% 50%/50% 50% 50% 50%;
+  position: absolute;
+  z-index: 10;
+  bottom: 2%;
+  right: 0%;
+  
+}
 .reviewHeading2{
   padding: 0;
   margin-left: 0;
@@ -1014,19 +1036,7 @@ body {
   background: #FFD806;
 
 }
-.reviewHeading::after{
-  content: "";
-  width: 28%;
-  height: 1px;
-  background: rgb(255,231,27);
-  background: linear-gradient(90deg, rgba(154,102,28,0.1) 20%, rgba(255,231,27,0.7) 48%, rgba(208,171,24,1) 60%, rgba(154,102,28,0.1) 100%);
-  border-radius: 50% 50% 50% 50%/50% 50% 50% 50%;
-  position: absolute;
-  z-index: 10;
-  top: -10%;
-  left: 0%;
-  
-}
+
 .reviewSectionDiv{
   height: 60vh;
   padding: 0;
@@ -1184,6 +1194,44 @@ body {
   }
 }
 
+/* Extra Small devices (portrait tablets and large phones, 600px and low) */
+@media only screen and (max-width: 600px) {
+  .reviewHeading{
+    font-size: 9vw;
+    padding: 0;
+  }
+  .reviewHeading::after{
+    content: "";
+    width: 40%;
+
+    position: absolute;
+    z-index: 10;
+    bottom: 10%;
+    right: 0%
+    
+  }
+  .reviewSectionDiv{
+    height: 30vh;
+    padding: 0;
+  }
+  .translatingDiv{
+    position: absolute;
+    top: -18.5vw;
+    left: -30%;
+    
+  }
+}
+
+/* Small devices (portrait tablets and large phones, Between 600px - 768px) */
+@media only screen and (max-width: 768px) and (min-width: 601px) {
+
+}
+
+/* Large device (portrait tablets and large phones, Between 992px - 1100px) */
+@media only screen and (max-width: 1100px) and (min-width: 992px) {
+
+}
+
 /*--------------------------------------------------------------
 # MODEL GAME dIV
 --------------------------------------------------------------*/
@@ -1193,7 +1241,7 @@ body {
   position: relative;
   width: 100%;
   height: calc(100vh);
-  background-color: #111;
+  background-color: #000;
   overflow: hidden;
   
 }
@@ -1226,25 +1274,35 @@ body {
   text-align: center;
   font-family: 'A4 Speed Bold', sans-serif;
 }
+.GameDescriptionHeadingCol{
+  padding: 0;
+  margin-top: 3vh;
+}
 .ModelGameHeading1{
+  
   font-size: 3.9vw;
   font-weight: 600;
   color: white;
+  line-height: 1;
+  /* background-color: red; */
   /* text-shadow: 1px 1px 1px #111; */
 }
 .ModelGameHeading2{
-  margin-top: -2vw;
   font-size: 5vw;
   font-weight: 600;
   color: white;
+  line-height: 1;
   /* text-shadow: 1px 1px 1px #111; */
 }
-.ModelGameHeading2 span.txt{
+.ModelGameHeading2 p.txt{
   background: rgb(255,231,27);
-  background-image: linear-gradient(45deg, rgba(255,231,27,1) 19%, rgba(208,171,24,1) 57%, rgb(154, 102, 28) 87%);
-  background-size: cover;
+  /* background: -webkit-linear-gradient(45deg, rgba(255,231,27,1) 9%, rgba(208,171,24,1) 57%, rgb(154, 102, 28) 100%); */
+
+  /* background-size: cover; */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -1256,7 +1314,7 @@ body {
     font-size: 5vw;
   }
   .ModelGameHeading2{
-    margin-top: -2vw;
+    margin-top: 0.5vh;
     font-size: 8vw;
 
   }
@@ -1279,7 +1337,7 @@ body {
 .dressChangeDiv{
   padding: 0;
   width: 100%;
-  height: calc(100vh - 100px);
+  height: 100vh;
   position: relative;
   overflow: hidden;
   background-color: black;
@@ -1308,13 +1366,26 @@ body {
 }
 
 .accessoriesButton button{
+  border: 1px solid #c1ac51;
+  position: relative;
   width: 100%;
   height: 80px;
   font-size: 3vw;
   font-weight: 900;
   font-family: 'A4 Speed Bold', sans-serif;
+  text-align: center;
 }
 
+.accessoriesButton button img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  object-fit: cover;
+  /* background-color: red; */
+}
 .animationButton{
   position: absolute;
   z-index: 100;
@@ -1326,9 +1397,13 @@ body {
 }
 .animationButton .row{
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 8vh;
   margin-left: 0;
   margin-right: 0;
+}
+.animationButton .row:last-child{
+  margin-bottom: 0vh;
+ 
 }
 
 .animationButton .accessoryDiv{
@@ -1336,21 +1411,32 @@ body {
 }
 
 .animationButton button{
+  border: 1px solid #c1ac51;
   width: 100%;
-  height: 80px;
+  height: 12vh;
   font-size: 3vw;
   font-weight: 900;
   font-family: 'A4 Speed Bold', sans-serif;
 }
+.animationButton button img{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,0%);
+  /* scale: 2; */
+  height: 24vh;
+  width: 4.5vw;
+  z-index: 100;
+  /* background-color: red; */
+}
 canvas .webgl{
-  height: calc(100vh - 100px);
+  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
   overflow: hidden;
   z-index: 10;
   background-color: #000000;
-  filter: saturation(0.1); 
 }
 
 .aboveCanvasDiv{
@@ -1366,14 +1452,29 @@ canvas .webgl{
  display: block !important;
 }
     
-  @keyframes move-clouds-back {
-    
-    0% {background-position:0 0;}    
-    100% {background-position:2000px 0;}
-    
-    }
-   
 
+   
+@media only screen and (max-width: 600px) {
+  .animationButton button img{
+
+    left: 50%;
+    transform: translate(-50%,0%);
+    height: 20vh;
+    width: 10vw;
+    z-index: 100;
+    /* background-color: red; */
+  }
+}
+
+/* Small devices (portrait tablets and large phones, Between 600px - 768px) */
+@media only screen and (max-width: 768px) and (min-width: 601px) {
+
+}
+
+/* Large device (portrait tablets and large phones, Between 992px - 1100px) */
+@media only screen and (max-width: 1100px) and (min-width: 992px) {
+
+}
 
   
 /*--------------------------------------------------------------
@@ -1390,7 +1491,7 @@ canvas .webgl{
   background-color: #000;
 }
 .NFTAvatarHeading{
-  padding-top: 80px;
+  padding-top: 8vh;
   display: flex;
   /* align-items: center; */
   justify-content: center;
@@ -1467,7 +1568,29 @@ canvas .webgl{
 } */
 
 
+/* Extra Small devices (portrait tablets and large phones, 600px and low) */
+@media only screen and (max-width: 600px) {
+  .NFTAvatarDescription{
 
+    font-size: 5vw
+
+  }
+  #text-behind, #text-front, #text-behind-blur {
+
+    font-size: 7vw;
+
+  }
+}
+
+/* Small devices (portrait tablets and large phones, Between 600px - 768px) */
+@media only screen and (max-width: 768px) and (min-width: 601px) {
+
+}
+
+/* Large device (portrait tablets and large phones, Between 992px - 1100px) */
+@media only screen and (max-width: 1100px) and (min-width: 992px) {
+
+}
 
 
 /*--------------------------------------------------------------
@@ -1485,7 +1608,6 @@ canvas .webgl{
 }
 .TeamHuddleDiv img{
   position: absolute;
-  
   width: 100%;
   object-fit: contain;
 }
@@ -1565,7 +1687,7 @@ canvas .webgl{
 .compTimelineDiv{
   position: relative;
   width: 100%;
-  height: calc(100vh);
+  height: 100vh;
   align-items: center; 
   justify-content: center; 
   background-color:black; 
@@ -1573,10 +1695,43 @@ canvas .webgl{
 }
 .compTimelineDiv img{
   position: absolute;
-  top: 0;
-  width:100%
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
 }
-  
+#compTimeline{
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  z-index: 2;
+  top: 0;
+}
+
+.carousel-col{
+  font-family: 'A4 Speed Bold', sans-serif;
+  font-size: 10vw;
+  text-align: center;
+  color: white;
+  /* margin-bottom: 10vh; */
+}
+   
+
+.carousel-control-prev , .carousel-control-next {
+  position: absolute;
+  /* background-color: red; */
+  top: 50%;
+  transform: TranslateY(-50%);
+}
+.carousel-control-prev {
+  right: auto;
+  left: 20vw;
+}
+.carousel-control-next {
+  left: auto;
+  right: 20vw;
+}
 
 /*--------------------------------------------------------------
 # Footer
@@ -1797,6 +1952,10 @@ canvas .webgl{
 
       font-weight: 500;
       font-size: 25px;
+    }
+    .contact .emailRowCol{
+      border: none;
+      
     }
 
 }
